@@ -1,0 +1,86 @@
+<html>
+
+<head>
+
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+        integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous">
+    </script>
+    <script src="./script.js"></script>
+    <style>
+        .wrapper {
+
+            width: 360px;
+            height: 300px;
+        }
+
+        .interaction {
+            position: relative;
+        }
+
+        .video {
+            width: 350px;
+            height: 280px;
+            background-color: yellow;
+        }
+
+        .emoticons {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            background-color: rgb(224, 221, 221);
+        }
+
+
+        .animationContainer {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            width: 0px;
+        }
+
+        .emoticons__emoticon {
+            width: 100%;
+            position: relative;
+            text-align: center;
+        }
+
+        .emoticons__emoticon:hover {
+            background-color: aqua;
+            transition: 2s ease-in;
+        }
+
+        .animation {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>NOTICIA</h1>
+    <h3>EL VIDEO</h3>
+    <div class="wrapper">
+        <div class="video"></div>
+        <div class="interaction" id="interaction">
+            <div id="animationContainer" class="animationContainer"></div>
+            <div class="emoticons">
+                <div role="button" class="emoticons__emoticon" onclick="emitEmoji('❤️')" id="❤️">
+                    <span class="animation">❤️</span>
+                </div>
+                <div role="button" class="emoticons__emoticon" onclick="emitEmoji('👍')" id="👍">
+                    <span class="animation">👍</span>
+                </div>
+                <div role="button" class="emoticons__emoticon" onclick="emitEmoji('🙏')" id="🙏">
+                    <span class="animation">🙏</span>
+                </div>
+                <div role="button" class="emoticons__emoticon" onclick="emitEmoji('👏')" id="👏">
+                    <span class="animation">👏</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
